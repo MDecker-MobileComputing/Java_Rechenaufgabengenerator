@@ -2,9 +2,17 @@ package de.eldecker.rechenaufgabengenerator;
 
 public class Main {
 
+    private static final int ANZAHL_AUFGABEN = 20;
+    
+    
+    /**
+     * Einstiegsmethode
+     * 
+     * @param args Wird nicht ausgewertet
+     */
     public static void main(String[] args) {
         
-        Rechenaufgabe[] aufgabenArray = new Rechenaufgabe[20];
+        Rechenaufgabe[] aufgabenArray = new Rechenaufgabe[ANZAHL_AUFGABEN];
         
         for (int i = 0; i < aufgabenArray.length; i++) {
             

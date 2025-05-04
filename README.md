@@ -9,6 +9,43 @@ Subtraktion erzeugt. Nach den Aufgaben werden noch die zugehörigen Lösungen au
 
 ----
 
+## Beispielausgabe ##
+
+<br>
+
+```
+Aufgaben:
+
+637 - 22 = 
+
+407 - 11 = 
+
+893 + 22 = 
+
+404 + 12 = 
+
+805 - 12 = 
+
+
+
+Lösungen:
+
+637 - 22 = 615
+
+407 - 11 = 396
+
+893 + 22 = 915
+
+404 + 12 = 416
+
+805 - 12 = 793
+
+```
+
+<br>
+
+----
+
 ## License ##
 
 <br>
