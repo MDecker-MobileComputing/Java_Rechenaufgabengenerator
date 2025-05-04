@@ -24,7 +24,7 @@ public class Rechenaufgabe {
     public Rechenaufgabe() {
       
         _zahl1 = 100 + ZUFALL.nextInt( 900 );
-        _zahl2 = 10 + ZUFALL.nextInt( 15);
+        _zahl2 =  11 + ZUFALL.nextInt( 15  );
         _istAddition = ZUFALL.nextBoolean();
         
         if (_istAddition) {
@@ -51,6 +51,8 @@ public class Rechenaufgabe {
     
     /**
      * Gibt Aufgabe ohne Ergebnis zurück.
+     * 
+     * @return Beispiel: "102 - 5 = "
      */
     @Override
     public String toString() {
@@ -61,6 +63,8 @@ public class Rechenaufgabe {
     
     /**
      * Gibt Aufgabe mit Ergebnis zurück.
+     * 
+     * @return Beispiel: "102 - 5 = 97"
      */
     public String toStringMitErgebnis() {
         
