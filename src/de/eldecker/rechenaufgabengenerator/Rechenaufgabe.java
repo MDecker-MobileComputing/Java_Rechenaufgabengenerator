@@ -24,8 +24,8 @@ public class Rechenaufgabe {
      */
     public Rechenaufgabe() {
       
-        _zahl1 = 100 + ZUFALL.nextInt( 900 );
-        _zahl2 =  11 + ZUFALL.nextInt( 15  );
+        _zahl1 = getZufallszahl( 100, 900 );
+        _zahl2 = getZufallszahl(  10, 35  );
         
         _istAddition = ZUFALL.nextBoolean();
         
@@ -38,6 +38,27 @@ public class Rechenaufgabe {
             
             _ergebnis = _zahl1 - _zahl2;
         }
+    }
+    
+    
+    /**
+     * Erzeugt Zufallszahl, ohne Vielfache von 10 (10er-Vermeidung).
+     * 
+     * @param min Kleinste Zahl vor 10er-Vermeidung
+     * 
+     * @param max Obere Schranke vor 10er-Vermeidung
+     * 
+     * @return Zufallszahl
+     */
+    private static int getZufallszahl( int min, int max ) {
+    
+    	int delta = max - min;
+    	
+    	int zahl = min + ZUFALL.nextInt( delta );
+    	
+    	if ( zahl % 10 == 0 ) { zahl++; }
+    	
+    	return zahl;
     }
     
     
