@@ -2,6 +2,7 @@ package de.eldecker.rechenaufgabengenerator;
 
 import java.util.Random;
 
+
 /**
  * Ein Objekt dieser Klasse repräsentiert eine einzelne Rechenaufgabe,
  * z.B. "102 - 5".
@@ -25,9 +26,11 @@ public class Rechenaufgabe {
       
         _zahl1 = 100 + ZUFALL.nextInt( 900 );
         _zahl2 =  11 + ZUFALL.nextInt( 15  );
+        
         _istAddition = ZUFALL.nextBoolean();
         
-        if (_istAddition) {
+        
+        if ( _istAddition ) {
             
             _ergebnis = _zahl1 + _zahl2;
             
