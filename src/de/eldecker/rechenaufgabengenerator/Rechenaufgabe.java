@@ -24,8 +24,8 @@ public class Rechenaufgabe {
      */
     public Rechenaufgabe() {
       
-        _zahl1 = getZufallszahl( 100, 900 );
-        _zahl2 = getZufallszahl(  10, 35  );
+        _zahl1 = getZufallszahl( 1000, 9000 );
+        _zahl2 = getZufallsPrimzahl();
         
         _istAddition = ZUFALL.nextBoolean();
         
@@ -59,6 +59,19 @@ public class Rechenaufgabe {
     	if ( zahl % 10 == 0 ) { zahl++; }
     	
     	return zahl;
+    }
+    
+    
+    private final static int[] PRIMZAHLEN = { 11, 13, 17, 19, 23, 29, 31 };
+    
+    
+    private static int getZufallsPrimzahl() {
+    	
+    	final int anzahl = PRIMZAHLEN.length;
+    	
+    	final int index = ZUFALL.nextInt( anzahl );
+    	
+    	return PRIMZAHLEN[ index ];
     }
     
     
