@@ -34,7 +34,7 @@ public class Rechenaufgabe {
     public Rechenaufgabe() {
       
         _zahl1 = getUngeradeZufallsZahl( 10_000, 98_000 );
-        _zahl2 = getUngeradeZufallsZahl( 21, 41 );
+        _zahl2 = getUngeradeZufallsZahl( 20, 50 );
         
         _istAddition = ZUFALL.nextBoolean();
         
@@ -59,7 +59,8 @@ public class Rechenaufgabe {
      * 
      * @return Zufallszahl
      */
-    private static int getZufallszahl( int min, int max ) {
+    @SuppressWarnings("unused")
+	private static int getZufallszahl( int min, int max ) {
     
     	int delta = max - min;
     	
@@ -76,7 +77,8 @@ public class Rechenaufgabe {
      * 
      * @return zweistellige Primzahl
      */
-    private static int getZufallsPrimzahl() {
+    @SuppressWarnings("unused")
+	private static int getZufallsPrimzahl() {
     	
     	final int anzahl = PRIMZAHLEN.length;
     	
