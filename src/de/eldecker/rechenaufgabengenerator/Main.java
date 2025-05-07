@@ -14,7 +14,7 @@ public class Main {
      * 
      * @param args Wird nicht ausgewertet
      */
-    public static void main(String[] args) {
+    public static void main( String[] args ) {
         
         final Rechenaufgabe[] aufgabenArray = new Rechenaufgabe[ ANZAHL_AUFGABEN ];
         

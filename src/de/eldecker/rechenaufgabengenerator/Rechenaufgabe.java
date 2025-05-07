@@ -9,13 +9,22 @@ import java.util.Random;
  */
 public class Rechenaufgabe {
 
+    /** Array mit einigen zweistelligen Primzahlen. */
+    private final static int[] PRIMZAHLEN = { 11, 13, 17, 19, 23, 29, 31 };
+
+    /** Zufallsgenerator. */
     private static final Random ZUFALL = new Random();
     
+    /** Operand 1. */
     private int _zahl1;
+    
+    /** Operand 2.*/ 
     private int _zahl2;
     
+    /** Wenn {@code true}, dann Addition, sonst Subtraktion. */
     private boolean _istAddition;
     
+    /** Ergebnis der Addition/Subtraktion für Musterlösung. */
     private int _ergebnis;
     
     
@@ -24,8 +33,8 @@ public class Rechenaufgabe {
      */
     public Rechenaufgabe() {
       
-        _zahl1 = getZufallszahl( 1000, 9000 );
-        _zahl2 = getZufallsPrimzahl();
+        _zahl1 = getUngeradeZufallsZahl( 10_000, 98_000 );
+        _zahl2 = getUngeradeZufallsZahl( 21, 41 );
         
         _istAddition = ZUFALL.nextBoolean();
         
@@ -61,10 +70,12 @@ public class Rechenaufgabe {
     	return zahl;
     }
     
-    
-    private final static int[] PRIMZAHLEN = { 11, 13, 17, 19, 23, 29, 31 };
-    
-    
+            
+    /** 
+     * Methode gibt zufällig ausgewählte Primzahl zurück.
+     * 
+     * @return zweistellige Primzahl
+     */
     private static int getZufallsPrimzahl() {
     	
     	final int anzahl = PRIMZAHLEN.length;
@@ -74,6 +85,27 @@ public class Rechenaufgabe {
     	return PRIMZAHLEN[ index ];
     }
     
+    
+    /**
+     * Methode erzeugt ungerade Zufallszahlen in bestimmten Bereich.
+     * 
+     * @param min Untere Grenze
+     * 
+     * @param max Obere Grenze
+     * 
+     * @return Ungerade Zufallszahl (evtl. {@code max+1}, damit ungerade)
+     */
+    private static int getUngeradeZufallsZahl( int min, int max ) {
+    	
+    	final int delta = max - min;
+    	
+    	int zahl = min + ZUFALL.nextInt( delta );
+    	
+    	if ( zahl % 2 == 0 ) { zahl++; }
+    	
+    	return zahl;
+    }
+        
     
     /**
      * Operator der Rechenaufgabe (Plus oder Minus) als String.
