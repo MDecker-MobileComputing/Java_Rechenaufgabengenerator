@@ -10,7 +10,7 @@ import java.util.Random;
 public class Rechenaufgabe {
 
     /** Array mit einigen zweistelligen Primzahlen. */
-    private final static int[] PRIMZAHLEN = { 11, 13, 17, 19, 23, 29, 31 };
+    private final static int[] PRIMZAHLEN = { 11, 13, 17, 19, 23, 29, 31, 37 };
 
     /** Zufallsgenerator. */
     private static final Random ZUFALL = new Random();
@@ -34,7 +34,7 @@ public class Rechenaufgabe {
     public Rechenaufgabe() {
       
         _zahl1 = getUngeradeZufallsZahl( 10_000, 98_000 );
-        _zahl2 = getUngeradeZufallsZahl( 20, 50 );
+        _zahl2 = getUngeradeZufallsZahl(     20,     50 );
         
         _istAddition = ZUFALL.nextBoolean();
         
@@ -73,7 +73,7 @@ public class Rechenaufgabe {
     
             
     /** 
-     * Methode gibt zufällig ausgewählte Primzahl zurück.
+     * Methode gibt zufällig ausgewählte Primzahl aus einem Array zurück.
      * 
      * @return zweistellige Primzahl
      */
@@ -133,7 +133,7 @@ public class Rechenaufgabe {
     
     
     /**
-     * Gibt Aufgabe mit Ergebnis zurück.
+     * Gibt Aufgabe mit Ergebnis für Musterlösung zurück.
      * 
      * @return Beispiel: "102 - 5 = 97"
      */
