@@ -33,8 +33,8 @@ public class Rechenaufgabe {
      */
     public Rechenaufgabe() {
       
-        _zahl1 = getUngeradeZufallsZahl( 10_000, 98_000 );
-        _zahl2 = getUngeradeZufallsZahl(     20,     50 );
+        _zahl1 = getZufallszahl( 10_000, 98_000, 7 );
+        _zahl2 = getZufallszahl(     20,     50, 7 );
         
         _istAddition = ZUFALL.nextBoolean();
         
@@ -71,6 +71,30 @@ public class Rechenaufgabe {
     	return zahl;
     }
     
+    
+    /**
+     * Generiert eine zufällige Zahl innerhalb eines bestimmten Bereichs, 
+     * die durch einen gegebenen Teiler teilbar ist.
+     *
+     * @param min Der minimale Wert des Bereichs (inklusive).
+     * 
+     * @param max Der maximale Wert des Bereichs (inklusive).
+     * 
+     * @param teiler Der Teiler, durch den die zurückgegebene Zahl teilbar sein muss.
+     * 
+     * @return Eine zufällige Zahl im Bereich [min, max], die durch den angegebenen Teiler teilbar ist.
+     */
+    private static int getZufallszahl( int min, int max, int teiler ) {
+    	    	
+        int start = (min % teiler == 0) ? min : (min + teiler - (min % teiler));
+        int end   = (max % teiler == 0) ? max : (max - (max % teiler));
+        
+        int range = (end - start) / teiler + 1;
+        int randomIndex = ZUFALL.nextInt(range);
+        
+        return start + randomIndex * teiler;
+    }
+    
             
     /** 
      * Methode gibt zufällig ausgewählte Primzahl aus einem Array zurück.
@@ -97,7 +121,8 @@ public class Rechenaufgabe {
      * 
      * @return Ungerade Zufallszahl (evtl. {@code max+1}, damit ungerade)
      */
-    private static int getUngeradeZufallsZahl( int min, int max ) {
+    @SuppressWarnings("unused")
+	private static int getUngeradeZufallsZahl( int min, int max ) {
     	
     	final int delta = max - min;
     	
