@@ -1,8 +1,9 @@
 package de.eldecker.rechenaufgabengenerator;
 
+import static java.util.Locale.GERMAN;
+
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.util.Locale;
 import java.util.Random;
 
 
@@ -63,10 +64,10 @@ public class Rechenaufgabe {
      */
     private static DecimalFormat erzeugeDecimalFormat() {
         
-        final DecimalFormatSymbols symbols = new DecimalFormatSymbols( Locale.GERMAN );
-        symbols.setGroupingSeparator( '.' );
+        final DecimalFormatSymbols symbole = new DecimalFormatSymbols( GERMAN );
+        symbole.setGroupingSeparator( '.' );
         
-        return new DecimalFormat( "#,###", symbols );
+        return new DecimalFormat( "#,###", symbole );
     }
     
     
