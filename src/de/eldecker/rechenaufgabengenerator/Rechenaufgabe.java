@@ -1,5 +1,8 @@
 package de.eldecker.rechenaufgabengenerator;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import java.util.Random;
 
 
@@ -11,6 +14,9 @@ public class Rechenaufgabe {
 
     /** Array mit einigen zweistelligen Primzahlen. */
     private final static int[] PRIMZAHLEN = { 11, 13, 17, 19, 23, 29, 31, 37 };
+
+    /** Formatierer, der Tausendertrennpunkte einfügt. */
+    private static DecimalFormat sZahlenFormatierer = erzeugeDecimalFormat();
 
     /** Zufallsgenerator. */
     private static final Random ZUFALL = new Random();
@@ -47,6 +53,20 @@ public class Rechenaufgabe {
             
             _ergebnis = _zahl1 - _zahl2;
         }
+    }
+    
+    
+    /**
+     * Zahlenformatierer erzeugen.
+     * 
+     * @return Zahlenformatierer, der Tausendertrennpunkte einfügt.
+     */
+    private static DecimalFormat erzeugeDecimalFormat() {
+        
+        final DecimalFormatSymbols symbols = new DecimalFormatSymbols( Locale.GERMAN );
+        symbols.setGroupingSeparator( '.' );
+        
+        return new DecimalFormat( "#,###", symbols );
     }
     
     
@@ -153,7 +173,7 @@ public class Rechenaufgabe {
     @Override
     public String toString() {
         
-        return _zahl1 + " " + operatorAlsString() + " " + _zahl2 + " = ";
+        return sZahlenFormatierer.format( _zahl1 ) + " " + operatorAlsString() + " " + _zahl2 + " = ";
     }
     
     
@@ -164,7 +184,7 @@ public class Rechenaufgabe {
      */
     public String toStringMitErgebnis() {
         
-        return _zahl1 + " " + operatorAlsString() + " " + _zahl2 + " = " + _ergebnis;
+        return sZahlenFormatierer.format( _zahl1 ) + " " + operatorAlsString() + " " + _zahl2 + " = " + _ergebnis;
     }
     
 }
