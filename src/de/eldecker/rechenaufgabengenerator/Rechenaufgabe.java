@@ -174,7 +174,9 @@ public class Rechenaufgabe {
     @Override
     public String toString() {
         
-        return sZahlenFormatierer.format( _zahl1 ) + " " + operatorAlsString() + " " + _zahl2 + " = ";
+        final String zahl1str = sZahlenFormatierer.format( _zahl1 );
+        
+        return zahl1str + " " + operatorAlsString() + " " + _zahl2 + " = ";
     }
     
     
@@ -185,7 +187,10 @@ public class Rechenaufgabe {
      */
     public String toStringMitErgebnis() {
         
-        return sZahlenFormatierer.format( _zahl1 ) + " " + operatorAlsString() + " " + _zahl2 + " = " + _ergebnis;
+        final String zahl1str = sZahlenFormatierer.format( _zahl1 );
+        final String ergebStr = sZahlenFormatierer.format( _ergebnis );
+        
+        return zahl1str + " " + operatorAlsString() + " " + _zahl2 + " = " + ergebStr;
     }
     
 }

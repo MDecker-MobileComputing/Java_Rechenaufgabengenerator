@@ -6,11 +6,14 @@ package de.eldecker.rechenaufgabengenerator;
  */
 public class Main {
 
-    private static final int ANZAHL_AUFGABEN = 20;
+    private static final int ANZAHL_AUFGABEN = 40;
+    
+    /** Wird zu Beginn von Aufgabe {@link #schreibeAufgabenTrenner()} erhöht. */
+    private static int ZEILEN_ZAEHLER = 0;
     
     
     /**
-     * Einstiegspunkt
+     * Einstiegspunkt.
      * 
      * @param args Wird nicht ausgewertet
      */
@@ -27,14 +30,40 @@ public class Main {
         System.out.println( "Aufgaben:\n" );
         for ( Rechenaufgabe aufgabe : aufgabenArray ) {
 
-            System.out.println( aufgabe + "\n" );
+            System.out.print( aufgabe );
+         
+            schreibeAufgabenTrenner();
         }
+        
+        ZEILEN_ZAEHLER = 0;
         
         System.out.println( "\n\nLösungen:\n" );
 
         for ( Rechenaufgabe aufgabe : aufgabenArray ) {
 
-            System.out.println( aufgabe.toStringMitErgebnis() + "\n" );
+            System.out.print( aufgabe.toStringMitErgebnis() );
+            
+            schreibeAufgabenTrenner();
+        }
+    }
+    
+    
+    /**
+     * Schreibt Leerzeilen und Tabs zwischen zwei Aufgaben
+     * (ersteres für ungerade Zeilennummern, letzteres für gerade).
+     * In der Methode wird zuerst der Zeilen-Zähler erhöht.
+     */
+    private static void schreibeAufgabenTrenner() {
+        
+        ZEILEN_ZAEHLER++;
+        
+        if ( ZEILEN_ZAEHLER % 2 == 1 ) {
+            
+            System.out.print( "\t\t\t\t" );
+            
+        } else {
+         
+            System.out.print( "\n\n" );
         }
     }
     
