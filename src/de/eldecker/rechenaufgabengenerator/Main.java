@@ -35,10 +35,8 @@ public class Main {
             schreibeAufgabenTrenner();
         }
         
-        ZEILEN_ZAEHLER = 0;
-        
+        ZEILEN_ZAEHLER = 0;        
         System.out.println( "\n\nLösungen:\n" );
-
         for ( Rechenaufgabe aufgabe : aufgabenArray ) {
 
             System.out.print( aufgabe.toStringMitErgebnis() );
@@ -49,7 +47,8 @@ public class Main {
     
     
     /**
-     * Schreibt Leerzeilen und Tabs zwischen zwei Aufgaben
+     * Schreibt Leerzeilen oder Tabs (für zweispaltiges "Layout") 
+     * zwischen zwei Aufgaben
      * (ersteres für ungerade Zeilennummern, letzteres für gerade).
      * In der Methode wird zuerst der Zeilen-Zähler erhöht.
      */

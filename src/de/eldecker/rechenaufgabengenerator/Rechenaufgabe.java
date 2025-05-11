@@ -83,7 +83,7 @@ public class Rechenaufgabe {
     @SuppressWarnings("unused")
 	private static int getZufallszahl( int min, int max ) {
     
-    	int delta = max - min;
+    	final int delta = max - min;
     	
     	int zahl = min + ZUFALL.nextInt( delta );
     	
@@ -107,11 +107,11 @@ public class Rechenaufgabe {
      */
     private static int getZufallszahl( int min, int max, int teiler ) {
     	    	
-        int start = (min % teiler == 0) ? min : (min + teiler - (min % teiler));
-        int end   = (max % teiler == 0) ? max : (max - (max % teiler));
+        final int start = (min % teiler == 0) ? min : (min + teiler - (min % teiler));
+        final int end   = (max % teiler == 0) ? max : (max - (max % teiler));
         
-        int range = (end - start) / teiler + 1;
-        int randomIndex = ZUFALL.nextInt(range);
+        final int range = (end - start) / teiler + 1;
+        final int randomIndex = ZUFALL.nextInt(range);
         
         return start + randomIndex * teiler;
     }
@@ -176,21 +176,23 @@ public class Rechenaufgabe {
         
         final String zahl1str = sZahlenFormatierer.format( _zahl1 );
         
-        return zahl1str + " " + operatorAlsString() + " " + _zahl2 + " = ";
+        return String.format( "%s %s %d = ", 
+                              zahl1str, operatorAlsString(), _zahl2 );
     }
     
     
     /**
      * Gibt Aufgabe mit Ergebnis für Musterlösung zurück.
      * 
-     * @return Beispiel: "102 - 5 = 97"
+     * @return Beispiel: "1.102 - 5 = 1.097"
      */
     public String toStringMitErgebnis() {
         
-        final String zahl1str = sZahlenFormatierer.format( _zahl1 );
+        final String zahl1str = sZahlenFormatierer.format( _zahl1    );
         final String ergebStr = sZahlenFormatierer.format( _ergebnis );
         
-        return zahl1str + " " + operatorAlsString() + " " + _zahl2 + " = " + ergebStr;
+        return String.format( "%s %s %d = %s", 
+                              zahl1str, operatorAlsString(), _zahl2, ergebStr );        
     }
     
 }
