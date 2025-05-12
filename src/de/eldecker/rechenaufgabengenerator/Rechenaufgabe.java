@@ -40,8 +40,8 @@ public class Rechenaufgabe {
      */
     public Rechenaufgabe() {
       
-        _zahl1 = getZufallszahl( 10_000, 98_000, 7 );
-        _zahl2 = getZufallszahl(     20,     50, 7 );
+        _zahl1 = getZufallszahl( 10_000, 98_000, 3 );
+        _zahl2 = getZufallszahl(     20,     60, 7 );
         
         _istAddition = ZUFALL.nextBoolean();
         
