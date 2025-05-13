@@ -14,7 +14,7 @@ import java.util.Random;
 public class Rechenaufgabe {
 
     /** Array mit einigen zweistelligen Primzahlen. */
-    private final static int[] PRIMZAHLEN = { 11, 13, 17, 19, 23, 29, 31, 37 };
+    private final static int[] PRIMZAHLEN = { 13, 17, 19, 23, 29, 31, 37, 41, 43 };
 
     /** Formatierer, der Tausendertrennpunkte einfügt. */
     private static DecimalFormat sZahlenFormatierer = erzeugeDecimalFormat();
@@ -40,8 +40,8 @@ public class Rechenaufgabe {
      */
     public Rechenaufgabe() {
       
-        _zahl1 = getZufallszahl( 10_000, 98_000, 3 );
-        _zahl2 = getZufallszahl(     20,     60, 7 );
+        _zahl1 = getZufallszahl( 1_000, 8_000, 3 );
+        _zahl2 = getZufallszahl(    20,    60, 7 );
         
         _istAddition = ZUFALL.nextBoolean();
         
