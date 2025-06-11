@@ -40,10 +40,11 @@ public class Rechenaufgabe {
      */
     public Rechenaufgabe() {
       
-        _zahl1 = getZufallszahl( 1_000, 8_000, 3 );
-        _zahl2 = getZufallszahl(    20,    60, 7 );
+        _zahl1 = getZufallszahlNotMod10( 2_000, 8_000 );
+        _zahl2 = getZufallszahlNotMod10(    35,    75 );
         
         _istAddition = ZUFALL.nextBoolean();
+        //_istAddition = false;
         
         
         if ( _istAddition ) {
@@ -150,6 +151,27 @@ public class Rechenaufgabe {
     	int zahl = min + ZUFALL.nextInt( delta );
     	
     	if ( zahl % 2 == 0 ) { zahl++; }
+    	
+    	return zahl;
+    }
+    
+    /**
+     * Methode erzeugt ungerade Zufallszahlen in bestimmten Bereich,
+     * die aber nicht ein Vielfaches von 10 ist.
+     * 
+     * @param min Untere Grenze
+     * 
+     * @param max Obere Grenze
+     * 
+     * @return Zufallszahl (evtl. {@code max+1}, damit nicht Vielfaches von 10)
+     */
+    private static int getZufallszahlNotMod10( int min, int max ) {
+    	
+    	final int delta = max - min;
+    	
+    	int zahl = min + ZUFALL.nextInt( delta );
+
+    	if ( zahl % 10 == 0 ) { zahl++; }
     	
     	return zahl;
     }
