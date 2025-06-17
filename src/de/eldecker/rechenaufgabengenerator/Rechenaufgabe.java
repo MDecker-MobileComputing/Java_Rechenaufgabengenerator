@@ -41,10 +41,11 @@ public class Rechenaufgabe {
     public Rechenaufgabe() {
       
         _zahl1 = getZufallszahlNotMod10( 2_000, 8_000 );
-        _zahl2 = getZufallszahlNotMod10(    35,    75 );
+        _zahl2 = getZufallszahlNotMod10(    35,    85 );
         
         _istAddition = ZUFALL.nextBoolean();
         //_istAddition = false;
+        // IDEE: Abwechselnd Plus oder Minus
         
         
         if ( _istAddition ) {
