@@ -43,10 +43,11 @@ public class Rechenaufgabe {
         _zahl1 = getZufallszahlNotMod10( 2_000, 8_000 );
         _zahl2 = getZufallszahlNotMod10(    35,    85 );
         
-        _istAddition = ZUFALL.nextBoolean();
+        //_istAddition = ZUFALL.nextBoolean();
         //_istAddition = false;
         // IDEE: Abwechselnd Plus oder Minus
         
+        _istAddition = getPlusMinusAbwechselnd();
         
         if ( _istAddition ) {
             
@@ -70,6 +71,20 @@ public class Rechenaufgabe {
         symbole.setGroupingSeparator( '.' );
         
         return new DecimalFormat( "#,###", symbole );
+    }
+    
+    
+    /**
+     * Klassenvariable für abwechseln Plus/Minus.
+     */
+    private static boolean sIstPlus = false;
+    
+    
+    public static boolean getPlusMinusAbwechselnd() {
+    	
+    	sIstPlus = !sIstPlus;
+    	
+    	return sIstPlus;
     }
     
     
