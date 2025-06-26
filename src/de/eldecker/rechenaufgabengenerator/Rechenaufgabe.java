@@ -40,8 +40,8 @@ public class Rechenaufgabe {
      */
     public Rechenaufgabe() {
       
-        _zahl1 = getZufallszahlNotMod10( 2_000, 8_000 );
-        _zahl2 = getZufallszahlNotMod10(    35,    85 );
+        _zahl1 = getZufallszahlNotMod10( 11_000, 99_000 );
+        _zahl2 = getZufallszahlNotMod10(  1_000,  2_000 );
         
         //_istAddition = ZUFALL.nextBoolean();
         //_istAddition = false;
@@ -213,9 +213,10 @@ public class Rechenaufgabe {
     public String toString() {
         
         final String zahl1str = sZahlenFormatierer.format( _zahl1 );
+        final String zahl2str = sZahlenFormatierer.format( _zahl2 );
         
-        return String.format( "%s %s %d = ", 
-                              zahl1str, operatorAlsString(), _zahl2 );
+        return String.format( "%s %s %s = ", 
+                              zahl1str, operatorAlsString(), zahl2str );
     }
     
     
@@ -227,10 +228,11 @@ public class Rechenaufgabe {
     public String toStringMitErgebnis() {
         
         final String zahl1str = sZahlenFormatierer.format( _zahl1    );
-        final String ergebStr = sZahlenFormatierer.format( _ergebnis );
+        final String zahl2str = sZahlenFormatierer.format( _zahl2    );
+        final String ergebStr = sZahlenFormatierer.format( _ergebnis );        
         
-        return String.format( "%s %s %d = %s", 
-                              zahl1str, operatorAlsString(), _zahl2, ergebStr );        
+        return String.format( "%s %s %s = %s", 
+                              zahl1str, operatorAlsString(), zahl2str, ergebStr );        
     }
     
 }
