@@ -7,6 +7,12 @@ Subtraktion erzeugt. Nach den Aufgaben werden noch die zugehörigen Lösungen au
 
 <br>
 
+Für eine Spring-Boot-Variante siehe [hier](https://github.com/MDecker-MobileComputing/Maven_SpringBoot_Rechenaufgabengenerator):
+* Erzeugt PDF
+* Bereitstellung über REST-Endpunkt
+
+<br>
+
 ----
 
 ## Beispielausgabe ##
